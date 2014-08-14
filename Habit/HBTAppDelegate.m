@@ -7,6 +7,7 @@
 //
 
 #import "HBTAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation HBTAppDelegate
 
@@ -16,6 +17,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [Parse setApplicationId:PARSE_APPLICATION_ID clientKey:PARSE_CLIENT_KEY];
+    
     return YES;
 }
 
