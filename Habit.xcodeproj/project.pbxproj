@@ -19,6 +19,9 @@
 		E7569799199C7AAC005633F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7569781199C7AAC005633F5 /* UIKit.framework */; };
 		E75697A1199C7AAC005633F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E756979F199C7AAC005633F5 /* InfoPlist.strings */; };
 		E75697A3199C7AAC005633F5 /* HabitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697A2199C7AAC005633F5 /* HabitTests.m */; };
+		E75697AE199C7F3D005633F5 /* Habit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75697AD199C7F3D005633F5 /* Habit.storyboard */; };
+		E75697B4199C7FED005633F5 /* HBTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697B3199C7FED005633F5 /* HBTLoginViewController.m */; };
+		E75697B7199C895E005633F5 /* HBTDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697B6199C895E005633F5 /* HBTDashboardViewController.m */; };
 		F1E6505471A9447A85781A93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E1BEAA1C5F49A78F1319AE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,11 @@
 		E75697A0199C7AAC005633F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E75697A2199C7AAC005633F5 /* HabitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HabitTests.m; sourceTree = "<group>"; };
 		E75697AC199C7C60005633F5 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		E75697AD199C7F3D005633F5 /* Habit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Habit.storyboard; sourceTree = "<group>"; };
+		E75697B2199C7FED005633F5 /* HBTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTLoginViewController.h; sourceTree = "<group>"; };
+		E75697B3199C7FED005633F5 /* HBTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTLoginViewController.m; sourceTree = "<group>"; };
+		E75697B5199C895E005633F5 /* HBTDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTDashboardViewController.h; sourceTree = "<group>"; };
+		E75697B6199C895E005633F5 /* HBTDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTDashboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,11 @@
 				E756978D199C7AAC005633F5 /* HBTAppDelegate.m */,
 				E756978F199C7AAC005633F5 /* Images.xcassets */,
 				E7569784199C7AAC005633F5 /* Supporting Files */,
+				E75697AD199C7F3D005633F5 /* Habit.storyboard */,
+				E75697B2199C7FED005633F5 /* HBTLoginViewController.h */,
+				E75697B3199C7FED005633F5 /* HBTLoginViewController.m */,
+				E75697B5199C895E005633F5 /* HBTDashboardViewController.h */,
+				E75697B6199C895E005633F5 /* HBTDashboardViewController.m */,
 			);
 			path = Habit;
 			sourceTree = "<group>";
@@ -231,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7569788199C7AAC005633F5 /* InfoPlist.strings in Resources */,
+				E75697AE199C7F3D005633F5 /* Habit.storyboard in Resources */,
 				E7569790199C7AAC005633F5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,8 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75697B7199C895E005633F5 /* HBTDashboardViewController.m in Sources */,
 				E756978A199C7AAC005633F5 /* main.m in Sources */,
 				E756978E199C7AAC005633F5 /* HBTAppDelegate.m in Sources */,
+				E75697B4199C7FED005633F5 /* HBTLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
