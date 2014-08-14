@@ -8,6 +8,9 @@
 
 #import "HBTLoginViewController.h"
 
+#import "HBTParseAppearanceTransformer.h"
+#import "HBTSignUpViewController.h"
+
 @interface HBTLoginViewController ()
 
 @end
@@ -19,11 +22,15 @@
 {
     [super viewDidLoad];
     
+    HBTParseAppearanceTransformer *transformer = [HBTParseAppearanceTransformer new];
+    transformer.tintColor = self.view.tintColor;
+    
     [self.logInView setBackgroundColor:[UIColor whiteColor]];
     
-    [self resetButton:self.logInView.logInButton];
-    [self resetButton:self.logInView.signUpButton];
-    [self resetButton:self.logInView.passwordForgottenButton];
+    [transformer resetButton:self.logInView.logInButton];
+    [transformer resetButton:self.logInView.signUpButton];
+    [transformer resetButton:self.logInView.passwordForgottenButton];
+    
     [self.logInView.passwordForgottenButton setTitle:@"Forgot" forState:UIControlStateNormal];
     
     // Remove text field shadows
@@ -45,6 +52,9 @@
     logoLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     self.logInView.logo = logoLabel;
     
+    HBTSignUpViewController *signUpController = [HBTSignUpViewController new];
+    signUpController.delegate = (id<PFSignUpViewControllerDelegate>)self.delegate;
+    [self setSignUpController:signUpController];
 }
 
 - (void)viewDidLayoutSubviews
@@ -55,21 +65,6 @@
                                                                 self.logInView.signUpButton.frame.origin.y + self.logInView.signUpButton.frame.size.height + 22,
                                                                 self.logInView.signUpButton.frame.size.width,
                                                                 44)];
-}
-
-- (void)resetButton:(UIButton *)button
-{
-    [button setBackgroundImage:nil forState:UIControlStateNormal];
-    [button setBackgroundImage:nil forState:UIControlStateHighlighted];
-    [button setTitleColor:self.view.tintColor forState:UIControlStateNormal];
-    [button setTitleColor:self.view.tintColor forState:UIControlStateHighlighted];
-    [button setTitleShadowColor:nil forState:UIControlStateNormal];
-    [button setTitleShadowColor:nil forState:UIControlStateHighlighted];
-    
-    button.layer.borderWidth = 1;
-    button.layer.borderColor = button.tintColor.CGColor;
-    
-    
 }
 
 - (BOOL)prefersStatusBarHidden

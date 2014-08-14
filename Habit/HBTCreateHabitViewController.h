@@ -1,5 +1,5 @@
 //
-//  HBTDashboardViewController.h
+//  HBTCreateHabitViewController.h
 //  Habit
 //
 //  Created by Fabian Canas on 8/14/14.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
-@interface HBTDashboardViewController : PFQueryTableViewController
+@interface HBTCreateHabitViewController : UIViewController
 
 @end
