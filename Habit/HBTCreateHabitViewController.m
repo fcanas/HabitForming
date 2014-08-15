@@ -8,6 +8,8 @@
 
 #import "HBTCreateHabitViewController.h"
 
+#import "HBTHabit.h"
+
 #import <Parse/Parse.h>
 
 @interface HBTCreateHabitViewController ()
@@ -32,12 +34,13 @@
 {
     NSArray *segmentValues = @[@"Day", @"Week", @"Month"];
     
-    PFObject *habit = [PFObject objectWithClassName:@"Habit"];
-    habit[@"name"] = self.habitNameField.text;
-    habit[@"targetNumber"] = self.targetNumberField.text;
-    habit[@"targetUnit"] = self.targetUnitField.text;
-    habit[@"interval"] = segmentValues[self.intervalPicker.selectedSegmentIndex];
-    habit[@"count"] = @0;
+    HBTHabit *habit = [[HBTHabit alloc] init];
+    
+    habit.name = self.habitNameField.text;
+    habit.targetNumber = [self.targetNumberField.text integerValue];
+    habit.targetUnit = self.targetUnitField.text;
+    habit.interval = segmentValues[self.intervalPicker.selectedSegmentIndex];
+    habit.count = 0;
     
     PFACL *habitACL = [PFACL ACLWithUser:[PFUser currentUser]];
     [habitACL setPublicReadAccess:!self.privateSwitch.enabled];

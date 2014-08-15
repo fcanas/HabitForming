@@ -8,8 +8,9 @@
 
 #import "HBTDashboardViewController.h"
 
-#import "HBTLoginViewController.h"
+#import "HBTHabit.h"
 #import "HBTHabitTableViewCell.h"
+#import "HBTLoginViewController.h"
 
 #import <Parse/Parse.h>
 
@@ -28,9 +29,6 @@
     
     self.parseClassName = @"Habit";
     
-    self.percentFormatter = [[NSNumberFormatter alloc] init];
-    [self.percentFormatter setNumberStyle:NSNumberFormatterPercentStyle];
-    
     return self;
 }
 
@@ -48,8 +46,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFObject *habit = [self objectAtIndexPath:indexPath];
-    [habit incrementKey:@"count"];
+    HBTHabit *habit = (HBTHabit *)[self objectAtIndexPath:indexPath];
+    [habit incrementCount];
     [habit saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -61,11 +59,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFObject *habit = [self objectAtIndexPath:indexPath];
+    HBTHabit *habit = (HBTHabit *)[self objectAtIndexPath:indexPath];
     HBTHabitTableViewCell *cell = (HBTHabitTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Habit"];
     
-    cell.nameLabel.text = habit[@"name"];
-    cell.percentLabel.text = [self.percentFormatter stringFromNumber:@([habit[@"count"] floatValue]/[habit[@"targetNumber"] floatValue])];
+    cell.nameLabel.text = habit.name;
+    cell.percentLabel.text = [habit percentProgress];
     return cell;
 }
 
