@@ -40,7 +40,6 @@
     
     if ([PFUser currentUser] == nil) {
         HBTLoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        loginVC.delegate = self;
         [self presentViewController:loginVC
                            animated:YES
                          completion:nil];
