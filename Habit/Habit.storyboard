@@ -194,7 +194,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-Hj-uUh">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-Hj-uUh">
                                             <rect key="frame" x="20" y="12" width="34" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -217,10 +217,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="DTB-Hj-uUh" firstAttribute="centerY" secondItem="uwb-vw-c3g" secondAttribute="centerY" id="aK5-Sr-JWm"/>
-                                        <constraint firstItem="DTB-Hj-uUh" firstAttribute="leading" secondItem="feI-45-GhA" secondAttribute="leading" constant="20" id="jGR-mz-3da"/>
                                         <constraint firstAttribute="centerY" secondItem="DTB-Hj-uUh" secondAttribute="centerY" id="jyF-PR-tOI"/>
-                                        <constraint firstItem="uwb-vw-c3g" firstAttribute="leading" secondItem="DTB-Hj-uUh" secondAttribute="trailing" constant="13" id="ndD-RW-vhP"/>
+                                        <constraint firstItem="uwb-vw-c3g" firstAttribute="leading" secondItem="DTB-Hj-uUh" secondAttribute="trailing" constant="13" id="yYv-GF-9ti"/>
                                         <constraint firstAttribute="trailing" secondItem="uwb-vw-c3g" secondAttribute="trailing" constant="20" id="yk5-gq-Qhd"/>
+                                        <constraint firstItem="uwb-vw-c3g" firstAttribute="leading" secondItem="feI-45-GhA" secondAttribute="leading" constant="67" id="zBM-Ey-f32"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -242,6 +242,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="mxi-Jl-hNf">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshHabits:" destination="xpD-qP-1RO" eventType="valueChanged" id="Fre-1z-4jb"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSn-74-Ma9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

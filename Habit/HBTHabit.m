@@ -32,7 +32,6 @@ static NSNumberFormatter *numberFormatter;
     return @"Habit";
 }
 
-
 - (void)incrementCount
 {
     [self incrementKey:NSStringFromSelector(@selector(count))];

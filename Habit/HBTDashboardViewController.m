@@ -15,21 +15,15 @@
 #import <Parse/Parse.h>
 
 @interface HBTDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
-@property (nonatomic, strong) NSNumberFormatter *percentFormatter;
+@property (nonatomic, strong) NSArray *habits;
 @end
 
 @implementation HBTDashboardViewController
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
+- (void)viewWillAppear:(BOOL)animated
 {
-    self = [super initWithCoder:aDecoder];
-    if (self == nil) {
-        return nil;
-    }
-    
-    self.parseClassName = @"Habit";
-    
-    return self;
+    [super viewWillAppear:animated];
+    [self refreshHabits:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -44,9 +38,14 @@
     }
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.habits.count;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HBTHabit *habit = (HBTHabit *)[self objectAtIndexPath:indexPath];
+    HBTHabit *habit = (HBTHabit *)self.habits[indexPath.row];
     [habit incrementCount];
     [habit saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -59,12 +58,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HBTHabit *habit = (HBTHabit *)[self objectAtIndexPath:indexPath];
+    HBTHabit *habit = (HBTHabit *)self.habits[indexPath.row];
     HBTHabitTableViewCell *cell = (HBTHabitTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Habit"];
     
     cell.nameLabel.text = habit.name;
     cell.percentLabel.text = [habit percentProgress];
     return cell;
+}
+
+- (IBAction)refreshHabits:(UIRefreshControl *)sender
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Habit"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.habits = objects;
+        [self.tableView reloadData];
+        [sender endRefreshing];
+    }];
 }
 
 #pragma mark - Login Handling
