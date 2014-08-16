@@ -12,6 +12,7 @@
 #import "HBTHabitTableViewCell.h"
 #import "HBTLoginViewController.h"
 
+#import <BlocksKit/BlocksKit+UIKit.h>
 #import <Parse/Parse.h>
 
 @interface HBTDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
@@ -43,19 +44,6 @@
     return self.habits.count;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    HBTHabit *habit = (HBTHabit *)self.habits[indexPath.row];
-    [habit incrementCount];
-    [habit saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-            });
-        }
-    }];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HBTHabit *habit = (HBTHabit *)self.habits[indexPath.row];
@@ -63,6 +51,17 @@
     
     cell.nameLabel.text = habit.name;
     cell.percentLabel.text = [habit percentProgress];
+    
+    [cell.incrementButton bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
+    [cell.incrementButton bk_addEventHandler:^(id sender) {
+        [habit incrementCount];
+        [habit saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [tableView reloadRowsAtIndexPaths:@[indexPath]
+                             withRowAnimation:UITableViewRowAnimationMiddle];
+        }];
+    }
+                            forControlEvents:UIControlEventTouchUpInside];
+    
     return cell;
 }
 
