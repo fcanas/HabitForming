@@ -24,6 +24,7 @@
 		E75697B7199C895E005633F5 /* HBTDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697B6199C895E005633F5 /* HBTDashboardViewController.m */; };
 		E75697BA199DA325005633F5 /* HBTHabit.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697B9199DA325005633F5 /* HBTHabit.m */; };
 		E75697BD199EFC86005633F5 /* HBTHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697BC199EFC86005633F5 /* HBTHabitViewController.m */; };
+		E75697BF199F0310005633F5 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E75697BE199F0310005633F5 /* Readme.md */; };
 		E7FA9CD3199D1A8B0026765B /* HBTParseAppearanceTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA9CD2199D1A8B0026765B /* HBTParseAppearanceTransformer.m */; };
 		E7FA9CD6199D4E2E0026765B /* HBTCreateHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA9CD5199D4E2E0026765B /* HBTCreateHabitViewController.m */; };
 		E7FA9CD9199D5EA80026765B /* HBTHabitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA9CD8199D5EA80026765B /* HBTHabitTableViewCell.m */; };
@@ -69,6 +70,7 @@
 		E75697B9199DA325005633F5 /* HBTHabit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTHabit.m; sourceTree = "<group>"; };
 		E75697BB199EFC86005633F5 /* HBTHabitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTHabitViewController.h; sourceTree = "<group>"; };
 		E75697BC199EFC86005633F5 /* HBTHabitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTHabitViewController.m; sourceTree = "<group>"; };
+		E75697BE199F0310005633F5 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		E7FA9CD1199D1A8B0026765B /* HBTParseAppearanceTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTParseAppearanceTransformer.h; sourceTree = "<group>"; };
 		E7FA9CD2199D1A8B0026765B /* HBTParseAppearanceTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTParseAppearanceTransformer.m; sourceTree = "<group>"; };
 		E7FA9CD4199D4E2E0026765B /* HBTCreateHabitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTCreateHabitViewController.h; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		E7569771199C7AAC005633F5 = {
 			isa = PBXGroup;
 			children = (
+				E75697BE199F0310005633F5 /* Readme.md */,
 				E75697AC199C7C60005633F5 /* Config.xcconfig */,
 				E7569783199C7AAC005633F5 /* Habit */,
 				E756979C199C7AAC005633F5 /* HabitTests */,
@@ -270,6 +273,7 @@
 			files = (
 				E7569788199C7AAC005633F5 /* InfoPlist.strings in Resources */,
 				E75697AE199C7F3D005633F5 /* Habit.storyboard in Resources */,
+				E75697BF199F0310005633F5 /* Readme.md in Resources */,
 				E7569790199C7AAC005633F5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
