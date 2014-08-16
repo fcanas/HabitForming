@@ -9,6 +9,7 @@
 #import "HBTDashboardViewController.h"
 
 #import "HBTHabit.h"
+#import "HBTHabitViewController.h"
 #import "HBTHabitTableViewCell.h"
 #import "HBTLoginViewController.h"
 
@@ -17,6 +18,7 @@
 
 @interface HBTDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 @property (nonatomic, strong) NSArray *habits;
+@property (nonatomic, strong) HBTHabit *selectedHabit;
 @end
 
 @implementation HBTDashboardViewController
@@ -42,6 +44,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.habits.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedHabit = (HBTHabit *)self.habits[indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,6 +80,16 @@
         [self.tableView reloadData];
         [sender endRefreshing];
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"HabitDetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        if ([[segue destinationViewController] isKindOfClass:[HBTHabitViewController class]]) {
+            [(HBTHabitViewController *)[segue destinationViewController] setHabit:self.habits[indexPath.row]];
+        }
+    }
 }
 
 #pragma mark - Login Handling

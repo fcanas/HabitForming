@@ -23,6 +23,7 @@
 		E75697B4199C7FED005633F5 /* HBTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697B3199C7FED005633F5 /* HBTLoginViewController.m */; };
 		E75697B7199C895E005633F5 /* HBTDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697B6199C895E005633F5 /* HBTDashboardViewController.m */; };
 		E75697BA199DA325005633F5 /* HBTHabit.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697B9199DA325005633F5 /* HBTHabit.m */; };
+		E75697BD199EFC86005633F5 /* HBTHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75697BC199EFC86005633F5 /* HBTHabitViewController.m */; };
 		E7FA9CD3199D1A8B0026765B /* HBTParseAppearanceTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA9CD2199D1A8B0026765B /* HBTParseAppearanceTransformer.m */; };
 		E7FA9CD6199D4E2E0026765B /* HBTCreateHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA9CD5199D4E2E0026765B /* HBTCreateHabitViewController.m */; };
 		E7FA9CD9199D5EA80026765B /* HBTHabitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA9CD8199D5EA80026765B /* HBTHabitTableViewCell.m */; };
@@ -66,6 +67,8 @@
 		E75697B6199C895E005633F5 /* HBTDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTDashboardViewController.m; sourceTree = "<group>"; };
 		E75697B8199DA325005633F5 /* HBTHabit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTHabit.h; sourceTree = "<group>"; };
 		E75697B9199DA325005633F5 /* HBTHabit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTHabit.m; sourceTree = "<group>"; };
+		E75697BB199EFC86005633F5 /* HBTHabitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTHabitViewController.h; sourceTree = "<group>"; };
+		E75697BC199EFC86005633F5 /* HBTHabitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTHabitViewController.m; sourceTree = "<group>"; };
 		E7FA9CD1199D1A8B0026765B /* HBTParseAppearanceTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTParseAppearanceTransformer.h; sourceTree = "<group>"; };
 		E7FA9CD2199D1A8B0026765B /* HBTParseAppearanceTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTParseAppearanceTransformer.m; sourceTree = "<group>"; };
 		E7FA9CD4199D4E2E0026765B /* HBTCreateHabitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTCreateHabitViewController.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				E7FA9CD8199D5EA80026765B /* HBTHabitTableViewCell.m */,
 				E75697B8199DA325005633F5 /* HBTHabit.h */,
 				E75697B9199DA325005633F5 /* HBTHabit.m */,
+				E75697BB199EFC86005633F5 /* HBTHabitViewController.h */,
+				E75697BC199EFC86005633F5 /* HBTHabitViewController.m */,
 			);
 			path = Habit;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75697B7199C895E005633F5 /* HBTDashboardViewController.m in Sources */,
+				E75697BD199EFC86005633F5 /* HBTHabitViewController.m in Sources */,
 				E7FA9CD6199D4E2E0026765B /* HBTCreateHabitViewController.m in Sources */,
 				E756978A199C7AAC005633F5 /* main.m in Sources */,
 				E75697BA199DA325005633F5 /* HBTHabit.m in Sources */,

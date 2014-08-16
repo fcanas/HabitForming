@@ -51,7 +51,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzE-td-Z1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="87"/>
+            <point key="canvasLocation" x="1719" y="445"/>
         </scene>
         <!--Create Habit View Controller - Pick Up a Habit-->
         <scene sceneID="4oH-by-sJR">
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCT-kB-jlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="87"/>
+            <point key="canvasLocation" x="2208" y="445"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e9Y-MQ-Phw">
@@ -227,6 +227,7 @@
                                     <outlet property="incrementButton" destination="SB2-xF-pTO" id="yBf-Qw-GmZ"/>
                                     <outlet property="nameLabel" destination="uwb-vw-c3g" id="wsH-kH-U3X"/>
                                     <outlet property="percentLabel" destination="DTB-Hj-uUh" id="8dz-sW-WFa"/>
+                                    <segue destination="HsY-Zu-b8L" kind="push" identifier="HabitDetailSegue" id="qDt-KC-cig"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -252,6 +253,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSn-74-Ma9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1179" y="89"/>
+        </scene>
+        <!--Habit View Controller-->
+        <scene sceneID="zkQ-Gj-GDU">
+            <objects>
+                <viewController id="HsY-Zu-b8L" customClass="HBTHabitViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="968-xC-EkW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lkx-9U-5By"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="83K-85-8Nj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSV-cJ-IMO">
+                                <rect key="frame" x="20" y="84" width="280" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="87"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RSV-cJ-IMO" firstAttribute="top" secondItem="968-xC-EkW" secondAttribute="bottom" constant="20" id="3Zk-7h-Ntn"/>
+                            <constraint firstItem="RSV-cJ-IMO" firstAttribute="leading" secondItem="83K-85-8Nj" secondAttribute="leading" constant="20" id="RIp-bK-CcE"/>
+                            <constraint firstAttribute="trailing" secondItem="RSV-cJ-IMO" secondAttribute="trailing" constant="20" id="gei-yy-VQn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0qx-oV-5NQ"/>
+                    <connections>
+                        <outlet property="progressLabel" destination="RSV-cJ-IMO" id="Dwe-6S-yhc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLi-Jl-AFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752" y="-274"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
