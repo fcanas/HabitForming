@@ -1,20 +1,20 @@
 PODS:
-  - BlocksKit (2.2.3):
+  - BlocksKit (2.2.5):
     - BlocksKit/All
-  - BlocksKit/All (2.2.3):
+  - BlocksKit/All (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
     - BlocksKit/MessageUI
     - BlocksKit/UIKit
-  - BlocksKit/Core (2.2.3)
-  - BlocksKit/DynamicDelegate (2.2.3)
-  - BlocksKit/MessageUI (2.2.3):
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - BlocksKit/UIKit (2.2.3):
+  - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - Bolts (1.1.1)
+  - Bolts (1.1.2)
   - Facebook-iOS-SDK (3.17.0):
     - Bolts
   - Parse (1.2.20):
@@ -22,11 +22,11 @@ PODS:
 
 DEPENDENCIES:
   - BlocksKit
-  - Parse
+  - Parse (= 1.2.20)
 
 SPEC CHECKSUMS:
-  BlocksKit: 07c8a80f04275efac6a5f8b973782489c083a182
-  Bolts: 0ca796081c3e7c139bd86d6903c27f1b83036a5d
+  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  Bolts: 2635e8698a630774689441047f3465d78c48d485
   Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
   Parse: 28c0dc54f30201a369d29a2f76c09fa43b2add16
 
