@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		67E1BEAA1C5F49A78F1319AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA702FB7E0C49B2B6D6E5E1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E736385419B5373E00888BB9 /* Dev-Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Dev-Config.xcconfig"; sourceTree = "<group>"; };
 		E756977A199C7AAC005633F5 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E756977D199C7AAC005633F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E756977F199C7AAC005633F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +108,7 @@
 		E7569771199C7AAC005633F5 = {
 			isa = PBXGroup;
 			children = (
+				E736385419B5373E00888BB9 /* Dev-Config.xcconfig */,
 				E75697BE199F0310005633F5 /* Readme.md */,
 				E75697AC199C7C60005633F5 /* Config.xcconfig */,
 				E7569783199C7AAC005633F5 /* Habit */,
@@ -205,6 +207,7 @@
 				E7569777199C7AAC005633F5 /* Frameworks */,
 				E7569778199C7AAC005633F5 /* Resources */,
 				8A5A48676023408996B898AE /* Copy Pods Resources */,
+				E736385619B5522C00888BB9 /* Check for Keys */,
 			);
 			buildRules = (
 			);
@@ -319,6 +322,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E736385619B5522C00888BB9 /* Check for Keys */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check for Keys";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"$PARSE_APPLICATION_ID\"\nif [ -z $PARSE_APPLICATION_ID ]\nthen\ncat << EOM\nerror: Configuration values missing.\nCopy the contents of Keys.example.xcconfig and configure with the correct environment values.\nEOM\nexit 1\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -378,7 +395,7 @@
 /* Begin XCBuildConfiguration section */
 		E75697A4199C7AAC005633F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E75697AC199C7C60005633F5 /* Config.xcconfig */;
+			baseConfigurationReference = E736385419B5373E00888BB9 /* Dev-Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

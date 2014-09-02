@@ -6,3 +6,4 @@
 //  Copyright (c) 2014 Fabián Cañas. All rights reserved.
 //
 #include "Keys.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) PARSE_APPLICATION_ID=@\"$(PARSE_APPLICATION_ID)\" PARSE_CLIENT_KEY=@\"$(PARSE_CLIENT_KEY)\" FACEBOOK_APPLICATION_ID=@\"$(FACEBOOK_APPLICATION_ID)\"

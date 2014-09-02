@@ -1,5 +1,9 @@
-PARSE_APPLICATION_ID = YOUR_ID_HERE
-PARSE_CLIENT_KEY = YOUR_KEY_HERE
-FACEBOOK_APPLICATION_ID = YOUR_ID_HERE
-
+//
+//  Dev-Config.xcconfig
+//  Habit
+//
+//  Created by Fabian Canas on 8/14/14.
+//  Copyright (c) 2014 Fabián Cañas. All rights reserved.
+//
+#include "Dev-Keys.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) PARSE_APPLICATION_ID=@\"$(PARSE_APPLICATION_ID)\" PARSE_CLIENT_KEY=@\"$(PARSE_CLIENT_KEY)\" FACEBOOK_APPLICATION_ID=@\"$(FACEBOOK_APPLICATION_ID)\"
